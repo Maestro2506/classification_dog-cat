@@ -5,12 +5,13 @@ import requests
 import pandas as pd
 import argparse
 
-url = 'http://127.0.0.1:5000/predict'
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--directory', type=str, default='images', help='specify the name of the folder where your images are saved')
+parser.add_argument('--url', type=str, default='http://127.0.0.1:5000/predict', help='specify the url if you want')
 parser.add_argument('--excel_name', type = str, required=False, help='specify the name of excel file if you want to crrate new excel file with ypur data')
 args = parser.parse_args()
+
+url = args.url
 
 main_dict = {"photos":[]}
 directory = args.directory
