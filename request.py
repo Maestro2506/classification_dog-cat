@@ -34,5 +34,7 @@ df['true_label'] = true_labels
 df[['cat_prob', 'dog_prob']] = df[['cat_prob', 'dog_prob']].astype(float)
 if args.excel_name is None:
   df.to_excel("probabilities.xlsx", index = False)
+else:
+  df.to_excel(args.excel_name+".xlsx", index = False)
 
 print("Finished")
